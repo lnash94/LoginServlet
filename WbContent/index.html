@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<title>Login</title>
+<script type="text/javascript">
+	function checkuser(){
+		var i = document.forms["login"]["user"].value;
+		var j = document.forms["login"]["pass"].value;
+		if ((i == null && j == null) || (i == "" && j == ""))  {
+			alert(" empty");
+			return false;
+		}
+		else if (i== null || i == "") {
+			alert("user name cannot be  empty!!!");
+			return false;
+		}
+		else if ( j == null || j == ""){
+			alert("password is empty !!");
+			return false;
+		}
+
+	}
+   </script>
+</head>
+
+<body>
+<h1>login form</h1>
+<form name="login" method="post" action="/Login"
+	onsubmit="return checkuser()">
+<table>
+	<tr>
+		<td colspan="1">User name</td>
+		<td colspan="1"><input type="text" name="user" /></td>
+	</tr>
+	<tr>
+		<td colspan="1">password</td>
+		<td colspan="1"><input type="password" name="pswd"></td>
+	</tr>
+	<tr>
+		<td><input type="submit" value="Login"></td>
+		<td><input type="submit" value="Sing up"></td>
+	</tr>
+
+</table>
+</form>
+</body>
+</html>
